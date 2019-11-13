@@ -1,29 +1,26 @@
 import { Component } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  posts = [
-    {
-      title: 'Mon premier post',
-      content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
-      lovesIt: 10,
-      createdAt: new Date()
-    },
-    {
-      title: 'Mon second post',
-      content: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
-      lovesIt: -10,
-      createdAt: new Date()
-    },
-    {
-      title: 'Encore un post',
-      content: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-      lovesIt: 0,
-      createdAt: new Date()
-    },
-  ];
+export class AppComponent  {
+
+  constructor() {
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDg3EiO38EAONH5V85C6tR7dacTSSIkJRU",
+      authDomain: "angular-demo-bc4a1.firebaseapp.com",
+      databaseURL: "https://angular-demo-bc4a1.firebaseio.com",
+      projectId: "angular-demo-bc4a1",
+      storageBucket: "angular-demo-bc4a1.appspot.com",
+      messagingSenderId: "630234017743",
+      appId: "1:630234017743:web:7ddcd09bda1ddb4295acba"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  }
+
 }
